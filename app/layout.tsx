@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from './header';
+import Footer from './footer';
 
 import './globals.css';
 
@@ -14,13 +14,11 @@ export default function RootLayout({ children }: {
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <body>
-        <Header />
-        <main>
+    <html className='box-border p-0 m-0'>
+      <body className='box-border p-0 m-0'>
+        <main className='bg-gray-200 dark:bg-slate-900'>
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   );
