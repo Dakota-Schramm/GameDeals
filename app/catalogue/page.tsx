@@ -13,7 +13,7 @@ interface ICatalogueGame {
 
 async function getCatalogue(): Promise<ICatalogueGame[]> {
   const res = await fetch(
-    'http://localhost:3000/api/catalogue',
+    'https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15',
     {
       headers: {
         'Content-Type': 'application/json',
@@ -23,9 +23,9 @@ async function getCatalogue(): Promise<ICatalogueGame[]> {
 
   if (!res.ok) throw new Error('An error occurred while fetching the data.')
 
-  const dataJson = await res.json();
+  const dataArray = await res.json();
 
-  return dataJson.data;
+  return dataArray;
 }
 
 async function CataloguePage() {
