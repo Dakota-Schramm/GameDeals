@@ -15,10 +15,8 @@ export default function RootLayout({ children }: {
 }) {
   return (
     <html className='box-border p-0 m-0'>
-      <body className='box-border p-0 m-0'>
-        <main className='bg-gray-200 dark:bg-slate-900'>
-          {children}
-        </main>
+      <body className='box-border p-0 m-0 bg-gray-200 dark:bg-slate-900'>
+        {children}
       </body>
     </html>
   );
