@@ -2,6 +2,12 @@
 
 This is a really simple project that shows the usage of Next.js with TypeScript.
 
+# Technologies Used
+- Nextjs + Typescript
+- TailwindCSS
+- NGinx
+
+
 ## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
@@ -45,3 +51,23 @@ When we run `next dev` the next time, Next.js will start looking for any `.ts` o
 Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
 
 A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+
+
+# TODO
+
+## API
+- Create a filters route that shows a modal so that the following parameters will be sent
+  * sortBy
+  * desc
+  * lowerPrice - set to 15 by default
+  * upperPrice - not set by default
+  * title, exact
+  * steamworks
+  * onSale - set to 1 default
+  ### Maybe implement?
+  * metaCritic
+  ### Details
+  - Should be accesible from the search bar that shows up on the index page
+  - Button to edit filters should exist on all other pages besides index 
+
+Packages to install
