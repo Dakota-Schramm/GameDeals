@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState } from 'react'
+import React from 'react'
 
 import Button from "./button"
 
 // TODO: Extract button component from here
-const Controls = ({pageNum, handlePageDecrement, handlePageIncrement}) => (
+const Controls = ({ pageNum, handlePageDecrement, handlePageIncrement }) => (
   <section className='flex justify-between w-full bg-slate-700 dark:bg-white-200'>
     <Button onClick={handlePageDecrement}>{'<'}</Button> 
     <h5>Page {pageNum + 1}</h5>
