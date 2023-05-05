@@ -39,11 +39,12 @@
     "node_modules"
   ],
   "baseUrl": ".",
-  "paths": {
-    // "~/*": ["*"],
-    "~/app/*": ["app/*"],
-    "~/hooks/*": ["hooks/*"],
-    "~/state/*": ["state/*"],
-    "~/utils/*": ["utils/*"],
-  }
+  // "paths": {
+  //   // "~/*": ["*"],
+  //   "~/app/*": ["app/*"],
+  //   "~/components/*": ["/components/*"],
+  //   "~/hooks/*": ["hooks/*"],
+  //   "~/state/*": ["state/*"],
+  //   "~/utils/*": ["utils/*"],
+  // }
 }
