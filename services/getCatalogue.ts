@@ -1,4 +1,5 @@
 import React from 'react'
+
 import catalogue from '../utils/constants/catalogue';
 
 // {
@@ -22,7 +23,6 @@ import catalogue from '../utils/constants/catalogue';
 //     dealRating: '8.2',
 //     thumb: 'https://cdn.cloudflare.steamstatic.com/steam/apps/245490/capsule_sm_120.jpg?t=1680016918'
 // }
-
 export interface ICatalogueGame {
   internalName: string;
   title: string;
