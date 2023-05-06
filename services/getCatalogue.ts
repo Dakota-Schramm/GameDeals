@@ -1,6 +1,6 @@
 import React from 'react'
 
-import catalogue from '../utils/constants/catalogue';
+import catalogue from 'utils/constants/catalogue';
 
 export interface ICatalogueGame {
   internalName: string;
