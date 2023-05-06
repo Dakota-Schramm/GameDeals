@@ -1,17 +1,20 @@
 'use client';
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import Game, { IGame } from './game';
-import Controls from '../controls';
+import DisplayGame from './display';
+import { ICatalogueGame } from './page';
+
+import Controls from 'components/controls';
 
 import useWindowSize from '../../hooks/useWindowSize';
 import { breakpoints as tw } from '../../utils/tailwindBreakpoints';
 
+// TODO: Fix shelf so that sizes of games are even for each entry
 const Shelf = ({entries}) => (
-  <section className='flex justify-between'>
+  <section className='grid w-full grid-cols-2 gap-4 lg:grid-cols-4 h-1/3'>
     {entries.map(
-      (entry) => <Game key={entry.gameID} {...entry} />
+      (entry) => <DisplayGame key={entry.gameID} {...entry} />
     )}
   </section>
 )
@@ -31,13 +34,18 @@ const Catalogue = ({ entries }: ICatalogue) => {
     : 0
   ;
 
-  const [wall, setWall] = useState(0);
-  const topRowBegin = 0;
-  const topRowEnd = topRowBegin + rowSize;
-  const bottomRowBegin = topRowEnd + 1;
-  const bottomRowEnd = bottomRowBegin + rowSize;
+  const numOfEntriesOnScreen = rowSize * 2;
+  const n = entries.length
 
-  console.log(entries)
+  const [wall, setWall] = useState(0);
+
+  const topRowBegin = Math.min(n, wall * numOfEntriesOnScreen);
+  const topRowEnd = Math.min(n, topRowBegin + rowSize);
+
+  const bottomRowBegin = Math.min(n, topRowEnd + 1);
+  const bottomRowEnd = Math.min(n, bottomRowBegin + rowSize);
+
+  console.log(entries.slice(0, 5))
 
   function handlePageDecrement() {
     if (wall > 0) setWall((w) => w - 1);
