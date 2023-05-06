@@ -1,7 +1,2 @@
-import catalogue from "./catalogue";
-import filters from "./filters"
-
-module.exports = {
-  catalogue,
-  filters
-}
+export {default as catalogue} from "./catalogue";
+export {default as filters} from "./filters"
