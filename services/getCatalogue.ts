@@ -2,27 +2,6 @@ import React from 'react'
 
 import catalogue from '../utils/constants/catalogue';
 
-// {
-//     internalName: 'TRIALSFUSION',
-//     title: 'Trials Fusion',
-//     metacriticLink: '/game/pc/trials-fusion',
-//     dealID: '4IJ0LTAdmmQQGqSS1%2F1PygUbGhrm96PdftnynpvD0m0%3D',
-//     storeID: '1',
-//     gameID: '107837',
-//     salePrice: '4.99',
-//     normalPrice: '19.99',
-//     isOnSale: '1',
-//     savings: '75.037519',
-//     metacriticScore: '80',
-//     steamRatingText: 'Mixed',
-//     steamRatingPercent: '67',
-//     steamRatingCount: '1940',
-//     steamAppID: '245490',
-//     releaseDate: 1397606400,
-//     lastChange: 1682960762,
-//     dealRating: '8.2',
-//     thumb: 'https://cdn.cloudflare.steamstatic.com/steam/apps/245490/capsule_sm_120.jpg?t=1680016918'
-// }
 export interface ICatalogueGame {
   internalName: string;
   title: string;
