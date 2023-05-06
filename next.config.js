@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
   env: {
-    NODE_ENV: process.env.NODE_ENV,
+    environment: process.env.environment,
   },
   experimental: {
     appDir: true,

@@ -1,5 +1,5 @@
 import React from 'react'
-import catalogue from '../utils/catalogue';
+import catalogue from '../utils/constants/catalogue';
 
 // {
 //     internalName: 'TRIALSFUSION',
@@ -48,7 +48,7 @@ export interface ICatalogueGame {
 // TODO: Move this into client component so can be used with filters.
 // TODO: Create shared file for this in utils called filters.ts
 const getCatalogue = async (): ICatalogueGame[] | Promise<ICatalogueGame[]> => {
-  if (process.env.NODE_ENV === "development") return catalogue;
+  if (process.env.environment === "development") return catalogue;
 
   const res = await fetch(
     'https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15',
