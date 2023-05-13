@@ -8,12 +8,11 @@ const GameModal = ({ params }) => {
   const gamePrices = getPrices(params.id)
 
   return (
-    // <Modal>
-    //   <Game />
-    // </Modal>
-    <section className='text-red-300 bg-white'>
-      Test modal
-    </section>
+    <Modal 
+      game={null}
+    >
+      <Game />
+    </Modal>
   )
 
 }
