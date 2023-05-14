@@ -41,6 +41,8 @@ const getPrices = async (id: number): Promise<IPrices> => {
     }
   )
 
+  if (!res.ok) throw new Error('An error occurred while fetching the data.')
+
   const data = await res.json()
   return data
 }
