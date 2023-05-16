@@ -1,20 +1,46 @@
 import React from 'react'
 
-import Modal from './modal';
+import GameModal from './modal';
 import Game from 'components/game';
 import getPrices from 'services/getPrices'; 
+import { getCatalogue } from 'services/';
+// DEFAULTS
 
-const GameModal = ({ params }) => {
-  const gamePrices = getPrices(params.id)
+const styleOptions = {
+  title: 'text-2xl',
+  description: 'text-sm',
+  bgColor: 'bg-gray-300/50',
+  panel: 'grid grid-rows-10 w-[200px] h-[300px] lg:h-[600px] lg:w-[400px] text-gray-100 bg-gray-700',
+}
+
+let content = {
+  title: 'Game Title',
+  description: 'Game Description',
+}
+
+const CatalogueGameModal = async ({ params }) => {
+  const gameEntries = await getCatalogue();
+  const gameMeta = gameEntries.find((game) => Number(game.gameID) === params.id)
+  const gamePrices = await getPrices(params.id)
+  const entryHistory = {
+    gameMeta,
+    gamePrices,
+  }
+
+  const { info, cheapestPriceEver } = gamePrices;
+  const { title } = info;
+
+  content.title = title || content.title;
+  if (title && cheapestPriceEver) {
+    content.description = `${title} is currently on sale for ${cheapestPriceEver.price}!`
+  }
 
   return (
-    <Modal 
-      game={null}
-    >
+    <GameModal {...{content, styleOptions, entryHistory}}>
       <Game />
-    </Modal>
+    </GameModal>
   )
 
 }
 
-export default GameModal;
+export default CatalogueGameModal;
