@@ -14,9 +14,6 @@ const GamePage = async ({ params }: { params: { id: number },  }) => {
   const gameMeta = gameEntries.find((game) => Number(game.gameID) === params.id)
   const gamePrices = await getPrices(params.id)
   
-  console.log(gameEntries[0], params.id, typeof params.id) //gameMeta is undefined
-  console.log(gamePrices, gameMeta)
-
   return <Game {...{gameMeta, gamePrices}} />
 }
 
