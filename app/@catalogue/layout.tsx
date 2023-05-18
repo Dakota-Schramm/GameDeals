@@ -1,6 +1,5 @@
 import React from 'react'
 
-// TODO: Renable modal for games
 const CatalogueLayout = async ({modal, children}: {
   modal: React.ReactNode,
   children: React.ReactNode
