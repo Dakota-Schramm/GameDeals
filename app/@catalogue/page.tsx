@@ -7,6 +7,11 @@ export const metadata = {
   title: 'CheapShark Project - Home',
 };
 
+/**
+ * 
+ * @returns The catalogue page with the fetched catalogue data 
+ */
+
 async function CataloguePage() {
   const catalogueGames = await getCatalogue();
 
