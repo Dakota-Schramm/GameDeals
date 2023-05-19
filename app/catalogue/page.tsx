@@ -3,8 +3,10 @@ import React from 'react'
 import Catalogue from '.';
 import { getCatalogue } from 'services';
 
+import SiteName from 'utils/name';
+
 export const metadata = {
-  title: 'CheapShark Project - Home',
+  title: `${SiteName} - Catalogue`,
 };
 
 /**
