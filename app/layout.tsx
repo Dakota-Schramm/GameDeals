@@ -1,6 +1,27 @@
 import React, { useContext } from 'react'
 
+import Header from './header';
+
 import './globals.css';
+
+const currentYear = new Date().getFullYear();
+
+const Footer = () => (
+  <footer className='flex'>
+    <h6>
+      Made by Dakota Schramm,
+      <span>{currentYear}</span>
+    </h6>
+  </footer>
+);
+
+const RootContent = ({ children }) => (
+  <>
+    <Header />
+    {children}
+    <Footer />
+  </>
+)
 
 /**
  * 
@@ -8,29 +29,14 @@ import './globals.css';
  * charSet="utf-8"
  * name="viewport" content="initial-scale=1.0, width=device-width"
  */
-
-export default function RootLayout({catalogue, searchSettings, children}: {
-  catalogue: React.ReactNode,
-  searchSettings: React.ReactNode,
+export default function RootLayout({ children }: {
   children: React.ReactNode;
 }) {
-  const isSearch = displaySearchSection();
-
   return (
     <html className='box-border p-0 m-0'>
       <body className='box-border p-0 m-0 bg-gray-200 dark:bg-slate-900'>
-        { children }
-        <section>
-          { isSearch && searchSettings }
-          { !isSearch && catalogue }
-        </section>
+        <RootContent>{ children }</RootContent>      
       </body>
     </html>
   );
-}
-
-function displaySearchSection() {
-  const route = window.location.pathname;
-
-  return route.includes('?search') 
 }
