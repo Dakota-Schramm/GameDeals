@@ -1,19 +1,9 @@
 import React, { useContext } from 'react'
 
 import Header from './header';
+import Footer from './footer';
 
 import './globals.css';
-
-const currentYear = new Date().getFullYear();
-
-const Footer = () => (
-  <footer className='flex'>
-    <h6>
-      Made by Dakota Schramm,
-      <span>{currentYear}</span>
-    </h6>
-  </footer>
-);
 
 const RootContent = ({ children }) => (
   <>
