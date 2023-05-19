@@ -1,7 +1,9 @@
 import React from 'react'
 
+import SiteName from 'utils/name';
+
 export const metadata = {
-  title: 'CheapShark Project - Search Settings',
+  title: `${SiteName} - Search`,
 };
 
 const SearchSettingsContent = ({ children }) => (
@@ -14,14 +16,12 @@ const SearchSettingsContent = ({ children }) => (
   </main>
 );
 
-const RootPage = ({ children }) => {
-  return 
-    <SearchSettingsContent>
-      <section className='flex items-center justify-center w-full h-full border-4 border-solid rounded-lg bg-white-700 border-white-300'>
-        <p>Test</p>
-      </section>
-    </SearchSettingsContent>
-
-}
+const RootPage = ({ children }) => (
+  <SearchSettingsContent>
+    <section className='flex items-center justify-center w-full h-full border-4 border-solid rounded-lg bg-white-700 border-white-300'>
+      <p>Test</p>
+    </section>
+  </SearchSettingsContent>
+)
 
 export default RootPage; 
