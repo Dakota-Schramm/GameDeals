@@ -10,8 +10,8 @@ function getConditionalStyles(path: string) {
 
 const DownButton = () => (
   <Link href='/catalogue'>
-    <button className='w-10 h-full border border-gray-500 border-solid'>
-      V
+    <button className='flex items-center justify-center w-10 h-full border border-gray-500 border-solid group'>
+      <img src='/expand.svg' alt='expand' className='w-6 h-6 group-hover:animate-bounce' />
     </button>
   </Link>
 )

@@ -16,7 +16,7 @@ const OptionsMenu = () => {
     <Menu as='div' className='relative'>
       {/* TODO: Use icon here */}
       <Menu.Button className='ml-1'>
-        More
+        <img src='/settings.svg' alt='Settings' className='h-full' />
       </Menu.Button> 
 
       {/*
