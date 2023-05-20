@@ -70,4 +70,18 @@ A `type-check` script is also added to `package.json`, which runs TypeScript's `
   - Should be accesible from the search bar that shows up on the index page
   - Button to edit filters should exist on all other pages besides index 
 
+Deals
+- List
+- Lookup (id)
+Games
+- List (title / steamAppId)
+- Lookup (id)
+- Lookup, multiple (ids)
+Stores
+- List
+- Stores last changes
+Alerts
+- Edit
+- Manage
+
 Packages to install
