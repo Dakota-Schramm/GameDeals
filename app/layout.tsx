@@ -1,20 +1,35 @@
-import React from 'react'
+'use client'
 
 import './globals.css';
 
-/* Meta tags added by default:
-  <meta charSet="utf-8" />
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-*/
+import React, { useContext, ReactNode } from 'react'
 
-export default function RootLayout({ children }: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html className='box-border p-0 m-0'>
-      <body className='box-border p-0 m-0 bg-gray-200 dark:bg-slate-900'>
-        {children}
-      </body>
-    </html>
-  );
-}
+import Header from './header';
+import Footer from './footer';
+import { OptionsProvider } from '../contexts/options';
+
+const RootContent = ({ children }) => (
+  <html className='box-border p-0 m-0'>
+    <body className='box-border p-0 m-0 bg-gray-200 dark:bg-slate-900'>
+      <Header />
+      {children}
+      <Footer />
+    </body>
+  </html>
+)
+
+/**
+ * 
+ * @remarks Meta tags added by default:
+ * charSet="utf-8"
+ * name="viewport" content="initial-scale=1.0, width=device-width"
+ */
+const RootLayout = (
+  { children }: { children: ReactNode; }
+) => (
+  <RootContent>
+    <OptionsProvider>{children}</OptionsProvider>
+  </RootContent>
+);
+
+export default RootLayout;

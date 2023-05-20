@@ -7,8 +7,8 @@ import { ICatalogueGame } from './page';
 
 import Controls from 'components/controls';
 
-import useWindowSize from '../../hooks/useWindowSize';
-import { breakpoints as tw } from '../../utils/tailwindBreakpoints';
+import useWindowSize from '../../../hooks/useWindowSize';
+import { breakpoints as tw } from '../../../utils/tailwindBreakpoints';
 
 // TODO: Fix shelf so that sizes of games are even for each entry
 const Shelf = ({entries}) => (
