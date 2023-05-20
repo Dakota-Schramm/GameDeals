@@ -9,11 +9,13 @@ import Footer from './footer';
 import { OptionsContext, OptionsProvider } from '../contexts/options';
 
 const RootContent = ({ children }) => (
-  <>
-    <Header />
-    {children}
-    <Footer />
-  </>
+  <html className='box-border p-0 m-0'>
+    <body className='box-border p-0 m-0 bg-gray-200 dark:bg-slate-900'>
+      <Header />
+      {children}
+      <Footer />
+    </body>
+  </html>
 )
 
 /**
@@ -28,12 +30,8 @@ export default function RootLayout({ children }: {
   const {options, setOptions} = useContext(OptionsContext);
 
   return (
-    <html className='box-border p-0 m-0'>
-      <body className='box-border p-0 m-0 bg-gray-200 dark:bg-slate-900'>
-        <RootContent>
-          <OptionsProvider>{children}</OptionsProvider>
-        </RootContent>
-      </body>
-    </html>
+    <RootContent>
+      <OptionsProvider>{children}</OptionsProvider>
+    </RootContent>
   );
 }
