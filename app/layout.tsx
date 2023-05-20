@@ -1,9 +1,12 @@
+'use client'
+
+import './globals.css';
+
 import React, { useContext } from 'react'
 
 import Header from './header';
 import Footer from './footer';
-
-import './globals.css';
+import { OptionsContext, OptionsProvider } from '../contexts/options';
 
 const RootContent = ({ children }) => (
   <>
@@ -22,10 +25,14 @@ const RootContent = ({ children }) => (
 export default function RootLayout({ children }: {
   children: React.ReactNode;
 }) {
+  const {options, setOptions} = useContext(OptionsContext);
+
   return (
     <html className='box-border p-0 m-0'>
       <body className='box-border p-0 m-0 bg-gray-200 dark:bg-slate-900'>
-        <RootContent>{ children }</RootContent>      
+        <RootContent>
+          <OptionsProvider>{children}</OptionsProvider>
+        </RootContent>
       </body>
     </html>
   );
