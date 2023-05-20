@@ -11,12 +11,15 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
-      # TODO: Install your linters here
-      - name: Setup Typescript
-        run: yarn add typescript
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
 
       - name: Setup Typescript linters
-        run: yarn add eslint prettier
+        run: npm install eslint prettier
         # run: yarn add eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
       - name: Run linters
