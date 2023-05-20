@@ -15,16 +15,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: 'npm'
           cache-dependency-path: package-lock.json
 
       - name: Setup Typescript linters
-        run: npm ci
+        run: yarn 
         # run: yarn add eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
       - name: Run linters
-        uses: samuelmeuli/lint-action@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          prettier: true
-          eslint: true
+        run: yarn lint
+
+      # - name: Run linters
+      #   uses: samuelmeuli/lint-action@v1
+      #   with:
+      #     github_token: ${{ secrets.github_token }}
+      #     prettier: true
+      #     eslint: true

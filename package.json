@@ -4,6 +4,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --check .",
+    "lint": "yarn eslint; yarn prettier",
     "type-check": "tsc"
   },
   "dependencies": {
