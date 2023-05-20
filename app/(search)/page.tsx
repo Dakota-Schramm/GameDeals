@@ -1,6 +1,7 @@
 import React from 'react'
 
 import SiteName from 'utils/name';
+import SearchBar from '.';
 
 export const metadata = {
   title: `${SiteName} - Search`,
@@ -16,11 +17,15 @@ const SearchSettingsContent = ({ children }) => (
   </main>
 );
 
-const RootPage = ({ children }) => (
+const RootPage = () => (
   <SearchSettingsContent>
-    <section className='flex items-center justify-center w-full h-full border-4 border-solid rounded-lg bg-white-700 border-white-300'>
-      <p>Test</p>
+    <section className='flex flex-col space-y-2 font-normal w-[250px] lg:w-[600px] mx-auto justify-start items-center'>
+      <SearchBar />
+      <h4 className='font-light'>
+        The API for this app is provided by <a href="https://www.cheapshark.com/api">CheapShark</a>.
+      </h4>
     </section>
+
   </SearchSettingsContent>
 )
 
