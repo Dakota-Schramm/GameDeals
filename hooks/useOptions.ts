@@ -57,7 +57,7 @@ interface TitleOptions {
 /**
  * @param metacritic - The lower bound of the Metacritic rating range to filter by. Default 0.
  */
-interface SearchOptions extends MetaOptions, SteamOptions, StoreOptions, TitleOptions {
+export interface SearchOptions extends MetaOptions, SteamOptions, StoreOptions, TitleOptions {
   metacritic?: number;
 }
 

@@ -2,11 +2,11 @@
 
 import './globals.css';
 
-import React, { useContext } from 'react'
+import React, { useContext, ReactNode } from 'react'
 
 import Header from './header';
 import Footer from './footer';
-import { OptionsContext, OptionsProvider } from '../contexts/options';
+import { OptionsProvider } from '../contexts/options';
 
 const RootContent = ({ children }) => (
   <html className='box-border p-0 m-0'>
@@ -24,14 +24,12 @@ const RootContent = ({ children }) => (
  * charSet="utf-8"
  * name="viewport" content="initial-scale=1.0, width=device-width"
  */
-export default function RootLayout({ children }: {
-  children: React.ReactNode;
-}) {
-  const {options, setOptions} = useContext(OptionsContext);
+const RootLayout = (
+  { children }: { children: ReactNode; }
+) => (
+  <RootContent>
+    <OptionsProvider>{children}</OptionsProvider>
+  </RootContent>
+);
 
-  return (
-    <RootContent>
-      <OptionsProvider>{children}</OptionsProvider>
-    </RootContent>
-  );
-}
+export default RootLayout;
