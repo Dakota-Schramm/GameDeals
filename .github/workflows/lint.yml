@@ -1,0 +1,27 @@
+name: Lint
+
+on: push
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      # TODO: Install your linters here
+      - name: Setup Typescript
+        run: yarn add typescript
+
+      - name: Setup Typescript linters
+        run: yarn add eslint prettier
+        # run: yarn add eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
+
+      - name: Run linters
+        uses: samuelmeuli/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          prettier: true
+          eslint: true
