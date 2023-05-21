@@ -32,7 +32,7 @@ export interface IPrices {
 const getPrices = async (id: number): Promise<IPrices> => {
   if (process.env.environment === "development") return prices;
 
-  const res = await fetch(
+  const GETGameLookup = await fetch(
     `https://www.cheapshark.com/api/1.0/games?id=${id}`,
     {
       headers: {
@@ -41,9 +41,9 @@ const getPrices = async (id: number): Promise<IPrices> => {
     }
   )
 
-  if (!res.ok) throw new Error('An error occurred while fetching the data.')
+  if (!GETGameLookup.ok) throw new Error('An error occurred while fetching the data.')
 
-  const data = await res.json()
+  const data = await GETGameLookup.json()
   return data
 }
 
