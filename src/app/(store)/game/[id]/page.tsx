@@ -1,10 +1,8 @@
 import React from 'react'
 
 import Game from '~/components/game';
-
 import { getCatalogue } from '~/controllers/catalogue';
 import { getPrices } from '~/controllers/prices';
-
 import SiteName from '~/utils/name';
 
 export const metadata = {
