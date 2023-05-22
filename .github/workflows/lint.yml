@@ -2,6 +2,11 @@ name: Lint
 
 on: push
 
+# Down scope as necessary via https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+permissions:
+  checks: write
+  contents: write
+
 jobs:
   run-linters:
     name: Run linters
@@ -25,7 +30,7 @@ jobs:
       #   run: yarn lint
 
       - name: Run linters
-        uses: samuelmeuli/lint-action@v1
+        uses: samuelmeuli/lint-action@v2
         with:
           github_token: ${{ secrets.github_token }}
           prettier: true
