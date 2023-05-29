@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-import { ICatalogueGame } from './page'
+import type { ICatalogueGame } from './page'
 
 const DisplayGame = ({ gameID, title, normalPrice, salePrice, thumb, ...props }: ICatalogueGame) => {
   const [image, setImage] = useState(undefined);

@@ -1,4 +1,4 @@
-const tailwindConfig = require('../tailwind.config.js');
+const tailwindConfig = require('tailwind.config.js');
 const resolveConfig = require('tailwindcss/resolveConfig');
 const { theme } = resolveConfig(tailwindConfig);
 

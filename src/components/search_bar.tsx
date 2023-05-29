@@ -3,9 +3,9 @@
 import React, { useContext, useState } from 'react'
 import { Menu } from '@headlessui/react'
 
-import SiteName from '../../utils/name'
-import useOptions from '../../hooks/useOptions';
-import { optionsDefault, OptionsContext } from '../../contexts/options';
+import SiteName from '~/utils/name'
+import useOptions from '~/hooks/useOptions';
+import { optionsDefault, OptionsContext } from '~/contexts/options';
 
 const OptionsMenu = () => {
   const {options, setOptions} = useContext(OptionsContext); 
@@ -24,13 +24,11 @@ const OptionsMenu = () => {
         when the `Menu.Button` is pressed.
       */}
       <Menu.Items className='absolute grid grid-cols-3 grid-rows-5 w-[250px] mt-2 bg-white rounded-xl right-0'>
-        {Object.entries(optionsDefault).map((k, v) => (
-          <Menu.Item>
-            {({ active }) => (
-              <button>
-                {k}
-              </button>
-            )}
+        {Object.entries(optionsDefault).map(
+          ([k, v]) => (
+          <Menu.Item>{
+            ({ active }) => <button>{k}</button>
+          }
           </Menu.Item>
         ))}
       </Menu.Items>

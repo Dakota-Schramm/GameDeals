@@ -1,10 +1,11 @@
 import React from 'react'
 
-import Game from 'components/game';
-import { getCatalogue, getPrices } from 'services';
-import { IAPICatalogueGame } from 'app/catalogue/page';  
+import Game from '~/components/game';
 
-import SiteName from 'utils/name';
+import { getCatalogue } from '~/controllers/catalogue';
+import { getPrices } from '~/controllers/prices';
+
+import SiteName from '~/utils/name';
 
 export const metadata = {
   title: `${SiteName} - Home`,

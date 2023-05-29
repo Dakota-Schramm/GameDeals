@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Catalogue from '.';
-import { getCatalogue } from 'services';
+import { getCatalogue } from '~/controllers/catalogue';
 
-import SiteName from 'utils/name';
+import SiteName from '~/utils/name';
 
 export const metadata = {
   title: `${SiteName} - Catalogue`,

@@ -2,11 +2,11 @@
 
 import './globals.css';
 
-import React, { useContext, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
-import Header from './header';
-import Footer from './footer';
-import { OptionsProvider } from '../contexts/options';
+import Header from '~/components/header';
+import Footer from '~/components/footer';
+import { OptionsProvider } from '~/contexts/options';
 
 const RootContent = ({ children }) => (
   <html className='box-border p-0 m-0'>

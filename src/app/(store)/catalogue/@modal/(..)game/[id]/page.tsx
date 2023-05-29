@@ -1,9 +1,10 @@
 import React from 'react'
 
 import GameModal from './modal';
-import Game from 'components/game';
-import getPrices from 'services/getPrices'; 
-import { getCatalogue } from 'services/';
+import Game from '~/components/game';
+
+import { getPrices }  from '~/controllers/prices'; 
+import { getCatalogue } from '~/controllers/catalogue';
 // DEFAULTS
 
 const styleOptions = {

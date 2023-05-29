@@ -1,6 +1,6 @@
 import React from 'react'
 
-import catalogue from 'utils/constants/catalogue';
+import catalogue from '~/utils/constants/catalogue';
 
 export interface ICatalogueGame {
   internalName: string;
@@ -26,7 +26,7 @@ export interface ICatalogueGame {
 
 // TODO: Move this into client component so can be used with filters.
 // TODO: Create shared file for this in utils called filters.ts
-const getCatalogue = async (): ICatalogueGame[] | Promise<ICatalogueGame[]> => {
+export const getCatalogue = async (): ICatalogueGame[] | Promise<ICatalogueGame[]> => {
   if (process.env.environment === "development") return catalogue;
 
   const res = await fetch(
@@ -44,4 +44,3 @@ const getCatalogue = async (): ICatalogueGame[] | Promise<ICatalogueGame[]> => {
   return dataArray;
 }
 
-export default getCatalogue;

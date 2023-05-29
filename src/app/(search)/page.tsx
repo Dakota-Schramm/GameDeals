@@ -1,7 +1,7 @@
 import React from 'react'
 
-import SiteName from 'utils/name';
-import SearchBar from '.';
+import SiteName from '~/utils/name';
+import SearchBar from '~/components/search_bar';
 
 export const metadata = {
   title: `${SiteName} - Search`,

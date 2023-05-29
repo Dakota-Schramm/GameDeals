@@ -23,28 +23,25 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/app/*": ["src/app/*"],
+      "~/components/*": ["src/components/*"],
+      "~/contexts/*": ["src/contexts/*"],
+      "~/controllers/*": ["src/app/_controllers/*"],
+      "~/hooks/*": ["src/hooks/*"],
+      "~/pages/*": ["src/pages/*"],
+      "~/utils/*": ["src/utils/*"]
+    }
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "styles/**/*.css",
-    "app/**/*.{ts, tsx}",
-    "pages/**/*.{ts, tsx}",
-    "components/**/*.{ts, tsx}"
+    "./src/**/*.css",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
   ],
-  "baseUrl": ".",
-  // "paths": {
-  //   // "~/*": ["*"],
-  //   "~/app/*": ["app/*"],
-  //   "~/components/*": ["/components/*"],
-  //   "~/hooks/*": ["hooks/*"],
-  //   "~/state/*": ["state/*"],
-  //   "~/utils/*": ["utils/*"],
-  // }
 }
