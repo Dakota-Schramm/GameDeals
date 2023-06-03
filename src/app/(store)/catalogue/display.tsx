@@ -23,7 +23,6 @@ const Footer = ({ normalPrice, salePrice }) => (
 
 const DisplayGame = ({ gameID, title, normalPrice, salePrice, thumb, ...props }: ICatalogueGame) => {
   const imageURL = useImageURL(thumb)
-  console.log(imageURL)
 
   return (
     <Link href={"/game/" + gameID}>
