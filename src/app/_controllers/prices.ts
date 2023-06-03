@@ -25,19 +25,18 @@ export interface IPrices {
   deals: GamePriceDeal[];
 }
 
+const URL = 'https://www.cheapshark.com/api/1.0';
+
 // TODO: Move this into client component so can be used with filters.
 // TODO: Create shared file for this in utils called filters.ts
 export const getPrices = async (id: number): Promise<IPrices> => {
   if (process.env.environment === "development") return prices;
 
-  const res = await fetch(
-    `https://www.cheapshark.com/api/1.0/games?id=${id}`,
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  )
+  const res = await fetch(URL + `/games?id=${id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
 
   if (!res.ok) throw new Error('An error occurred while fetching the data.')
 
