@@ -23,10 +23,6 @@ const CatalogueGameModal = async ({ params }) => {
   const gameEntries = await getCatalogue();
   const gameMeta = gameEntries.find((game) => Number(game.gameID) === params.id)
   const gamePrices = await getPrices(params.id)
-  const entryHistory = {
-    gameMeta,
-    gamePrices,
-  }
 
   const { info, cheapestPriceEver } = gamePrices;
   const { title } = info;
@@ -37,10 +33,10 @@ const CatalogueGameModal = async ({ params }) => {
   }
 
   return (
-    <GameModal {...{content, styleOptions, entryHistory}}>
-      <Game />
+    <GameModal {...{ content, styleOptions }}>
+      <Game {...{ gameMeta, gamePrices }} />
     </GameModal>
-  )
+  );
 
 }
 
