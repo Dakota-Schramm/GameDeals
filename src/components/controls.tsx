@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from "../../../components/button"
+import Button from "~/components/button"
 
 // TODO: Extract button component from here
 const Controls = ({ pageNum, handlePageDecrement, handlePageIncrement }) => (
