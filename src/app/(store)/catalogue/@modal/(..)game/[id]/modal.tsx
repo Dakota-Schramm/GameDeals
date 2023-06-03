@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react'
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 /** 
  * General Modal component.
@@ -30,28 +31,25 @@ interface SectionStyles {
 interface ModalProps { 
   styleOptions: SectionStyles; 
   content: ModalContent;
-  entryHistory: any;
+  // gameID: number;
   children: React.ReactNode;
 }
 
-const GameModal = ({content, styleOptions, entryHistory, children}: ModalProps) => {
+const GameModal = ({content, styleOptions, children}: ModalProps) => {
   const {title, description} = content;
   const {
     title: titleStyle,
     description: descriptionStyle,
-    panel:
-      panelStyle = 'grid grid-rows-10 w-[200px] h-[300px] lg:h-[600px] lg:w-[400px] text-gray-100 bg-gray-700 p-4',
+    panel: panelStyle = 'grid grid-rows-10 w-[200px] h-[300px] lg:h-[600px] ' + 
+      'lg:w-[400px] text-gray-100 bg-gray-700 p-4',
     bgColor: bgColorStyle = 'bg-gray-300/50',
   } = styleOptions;
   
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
 
-  console.log("eh", content, styleOptions, entryHistory)
-
   const handleClose = () => {
     setIsOpen(false);
-    console.log('close')
     router.back();
   }
 
@@ -63,7 +61,11 @@ const GameModal = ({content, styleOptions, entryHistory, children}: ModalProps) 
       <div className='fixed inset-0 flex items-center justify-center'>
         <Dialog.Panel className={panelStyle}>
           <section className='flex items-start justify-between w-full row-span-1'>
-            <Dialog.Title className={titleStyle}>
+            <Dialog.Title 
+              as="button"  
+              className={titleStyle}
+              onClick={() => router.refresh()}
+            >
               {title}
             </Dialog.Title>
             <button onClick={handleClose}>X</button>
