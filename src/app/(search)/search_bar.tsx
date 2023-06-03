@@ -6,6 +6,7 @@ import { Menu } from '@headlessui/react'
 import SiteName from '~/utils/name'
 import useOptions from '~/hooks/useOptions';
 import { optionsDefault, OptionsContext } from '~/contexts/options';
+import { SettingsIcon } from './settings_icon';
 
 const OptionsMenu = () => {
   const {options, setOptions} = useContext(OptionsContext); 
@@ -16,7 +17,7 @@ const OptionsMenu = () => {
     <Menu as='div' className='relative'>
       {/* TODO: Use icon here */}
       <Menu.Button className='ml-1'>
-        <img src='/settings.svg' alt='Settings' className='h-full' />
+        <SettingsIcon color="#ffffff" />
       </Menu.Button> 
 
       {/*
