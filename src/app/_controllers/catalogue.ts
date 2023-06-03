@@ -23,20 +23,20 @@ export interface ICatalogueGame {
   dealRating: string;
   thumb: string;
 }
+const GetCatalogueError = Error('An error occurred while fetching the data.'
+
+const URL = 'https://www.cheapshark.com/api/1.0';
 
 // TODO: Move this into client component so can be used with filters.
 // TODO: Create shared file for this in utils called filters.ts
 export const getCatalogue = async (): ICatalogueGame[] | Promise<ICatalogueGame[]> => {
   if (process.env.environment === "development") return catalogue;
 
-  const res = await fetch(
-    'https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15',
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  const res = await fetch(URL + '/deals?storeID=1&upperPrice=15', {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
   if (!res.ok) throw new Error('An error occurred while fetching the data.')
 
